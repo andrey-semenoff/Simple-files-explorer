@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+html(lang="en")
+    head
+        meta(charset="UTF-8")
+        meta(name="viewport", content="width=device-width, initial-scale=1.0")
+        title Simple files explorer
+    body
+        if files.length
+            h1 Current file:
+            if file.path
+                p
+                    a(href=file.path target="_blank")= file.name
+            hr
+            p
+                if prevLink
+                    a(href=prevLink) Prev file
+                    | &nbsp;&nbsp;
+                if nextLink
+                    a(href=nextLink) Next file
+                
+        else
+            p No files
